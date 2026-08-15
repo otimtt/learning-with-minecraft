@@ -1,0 +1,21 @@
+{
+  "language": "en-US",
+  "nativeLanguage": "pt-BR",
+  "version": 1,
+  "entries": [
+    {
+      "term": "although",
+      "translation": "embora",
+      "partOfSpeech": "conjunction",
+      "example": "Although it was raining, we played.",
+      "notes": "Used to contrast ideas."
+    },
+    {
+      "term": "instead",
+      "translation": "em vez disso",
+      "partOfSpeech": "adverb",
+      "example": "We walked instead of driving.",
+      "notes": "Used to replace one action with another."
+    }
+  ]
+}

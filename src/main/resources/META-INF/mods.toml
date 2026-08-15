@@ -1,0 +1,28 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="MIT"
+showAsResourcePack=false
+clientSideOnly=true
+
+[[mods]]
+modId="learningwithminecraft"
+version="${file.jarVersion}"
+displayName="Learning with Minecraft"
+description='''
+An offline language-learning chat corrector for Minecraft.
+'''
+
+[[dependencies.learningwithminecraft]]
+modId="forge"
+mandatory=true
+versionRange="[1,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.learningwithminecraft]]
+modId="minecraft"
+mandatory=true
+versionRange="[1,)"
+ordering="NONE"
+side="BOTH"
+

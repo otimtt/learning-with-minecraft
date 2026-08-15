@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "learningwithminecraft",
+  "version": "${version}",
+  "name": "Learning with Minecraft",
+  "description": "An offline language-learning chat corrector for Minecraft.",
+  "authors": ["error1001011"],
+  "contact": {},
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.learningwithminecraft.LearningWithMinecraftMod"
+    ],
+    "client": [
+      "com.learningwithminecraft.client.LearningWithMinecraftClient"
+    ]
+  },
+  "mixins": [
+    "learningwithminecraft.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.11",
+    "minecraft": "~1.20.1",
+    "java": ">=17",
+    "fabric-api": "*"
+  }
+}

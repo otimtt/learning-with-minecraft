@@ -1,91 +1,149 @@
 # Learning with Minecraft
 
-`Learning with Minecraft` é uma ideia de mod para Minecraft de PC focado em aprendizado de idiomas dentro do próprio chat do jogo.
+`Learning with Minecraft` is a Minecraft PC mod concept focused on language correction and suggestions directly in the in-game chat.
 
-## Ideia principal
+## Main idea
 
-O mod analisa o texto que o jogador digita no chat e ajuda na aprendizagem do idioma que ele está estudando. Em vez de apenas corrigir de forma seca, ele entrega feedback útil e fácil de entender.
+The mod analyzes what the player types in chat and helps them learn the language they are studying. The goal is to work as an offline corrector and suggestion tool, without any external API.
 
-A proposta é simples:
+The concept is simple:
 
-- o jogador escolhe um idioma para aprender
-- o mod identifica erros na frase digitada
-- o mod sugere correções
-- o mod explica o erro no idioma que o jogador domina
-- o jogador pode guardar palavras novas em um painel de aprendizado
+- the player downloads two dictionaries
+- one dictionary is for the player's native language
+- the other dictionary is for the language they want to learn
+- the player places both files inside the mod folder
+- the mod reads these files locally
+- the mod identifies errors in the typed sentence
+- the mod suggests corrections
+- the mod explains the mistake in the player's native language
+- the player can save new words in a learning panel
 
-## Exemplo de uso
+The setup window opens inside Minecraft, through an extra entry in the game settings called `Learn Idioms`.
 
-Se um jogador nativo de português estiver aprendendo inglês, o mod pode funcionar assim:
+## Example
 
-- frase digitada: `I have 20 years`
-- correção sugerida: `I am 20 years old`
-- explicação em português: em inglês, a idade normalmente é expressa com `to be`, e não com `have`
+If a Portuguese-speaking player is learning English, the mod could work like this:
 
-Isso deixa a aprendizagem mais clara, porque o usuário recebe a explicação em um idioma que ele já entende.
+- typed sentence: `I have 20 years`
+- suggested correction: `I am 20 years old`
+- explanation in Portuguese: in English, age is usually expressed with `to be`, not `have`
 
-## Funcionalidades pensadas
+This makes the learning process easier because the player receives the explanation in a language they already understand.
 
-### 1. Correção de frases no chat
+## Planned features
 
-O mod detecta erros comuns de gramática, vocabulário e estrutura de frase antes ou logo após o envio no chat.
+### 1. Chat sentence correction
 
-### 2. Explicações na língua nativa do jogador
+The mod detects common grammar, vocabulary, and sentence structure mistakes before or right after the message is sent in chat, based on the local dictionaries.
 
-O usuário aprende melhor quando a análise vem no idioma que ele domina. Assim, um brasileiro aprendendo inglês recebe a explicação em português.
+### 2. Explanations in the player's native language
 
-### 3. Painel de palavras aprendidas
+Players learn better when the analysis is shown in the language they already know. For example, a Brazilian player learning English would see the explanation in Portuguese.
 
-O jogador pode abrir um painel com o histórico de palavras e expressões aprendidas.
+### 3. Local dictionaries
 
-Esse painel pode mostrar:
+The mod depends on two dictionaries provided by the user:
 
-- palavra original
-- tradução
-- exemplo de uso
-- contexto em que apareceu
-- data em que foi aprendida
-- status de revisão
+- native language dictionary
+- target language dictionary
 
-### 4. Registro de progresso
+These files live in the mod folder and are used as the base for comparison, suggestion, and explanation.
 
-O mod pode guardar o que o jogador já viu para evitar repetir o mesmo conteúdo o tempo todo e para facilitar revisões futuras.
+### 4. In-game setup entry
 
-## Estrutura do aprendizado
+The mod adds a dedicated settings entry inside Minecraft called `Learn Idioms`.
 
-A ideia pode ser organizada em três partes:
+From there, the player can open the configuration window, choose the native language, choose the target language, and manage the local dictionaries.
 
-1. `Correção em tempo real`
-   - analisa a frase digitada
-   - sugere correções
-   - mostra explicações curtas
+### 5. Learned words panel
 
-2. `Registro de aprendizado`
-   - salva palavras e construções novas
-   - evita duplicar informações
-   - relaciona o aprendizado ao contexto do chat
+The player can open a panel with the history of words and expressions they have learned.
 
-3. `Painel do jogador`
-   - lista palavras aprendidas
-   - permite revisar vocabulário
-   - ajuda a acompanhar o progresso
+This panel can show:
 
-## Objetivo do mod
+- original word
+- translation
+- usage example
+- context where it appeared
+- date learned
+- review status
 
-O objetivo do `Learning with Minecraft` é transformar o chat em um ambiente de estudo leve, prático e contextual, sem tirar o jogador da experiência do jogo.
+### 6. Progress tracking
 
-Ele não seria apenas um corretor. A proposta é funcionar como um tutor discreto, que ensina enquanto o jogador joga.
+The mod can remember what the player has already seen so it does not repeat the same content all the time and can support future reviews.
 
-## Próximos passos
+## Learning structure
 
-Quando o projeto for desenvolvido, os próximos passos podem ser:
+The idea can be organized into four parts:
 
-- definir a versão base do Minecraft
-- escolher a tecnologia do mod
-- decidir se a correção será local ou via API
-- desenhar a interface do painel de palavras
-- estruturar o fluxo de correção e explicação no chat
+1. `Real-time correction`
+   - analyzes typed sentences
+   - suggests corrections
+   - shows short explanations
 
-## Resumo
+2. `Local dictionaries`
+   - reads the native dictionary
+   - reads the target language dictionary
+   - uses both to compare and suggest corrections
 
-`Learning with Minecraft` é um mod de aprendizado de idiomas em que o chat do jogo vira uma ferramenta educativa. Ele corrige frases, explica erros na língua nativa do jogador e mantém um painel com palavras aprendidas para revisão futura.
+3. `Learning history`
+   - saves new words and structures
+   - avoids duplicate entries
+   - connects learning to chat context
+
+4. `Player panel`
+   - lists learned words
+   - allows vocabulary review
+   - helps track progress
+
+5. `Minecraft settings entry`
+   - exposes the mod inside the game settings
+   - opens the setup window in-game
+   - keeps the first-run flow accessible without leaving Minecraft
+
+## Goal of the mod
+
+The goal of `Learning with Minecraft` is to turn the chat into a lightweight, practical, and contextual study environment without taking the player away from the game.
+
+It would not be just a corrector. The idea is to work as a discreet corrector and suggestion tool that teaches while the player plays.
+
+## Next steps
+
+When the project is developed, the next steps could be:
+
+- decide the base Minecraft version
+- choose the mod technology
+- define the local dictionary format
+- design the word panel interface
+- structure the correction and explanation flow in chat
+
+## Project structure
+
+The repository is organized to keep the mod maintainable and ready for future updates:
+
+```text
+learning-with-minecraft/
+├─ src/
+│  ├─ common/java/com/learningwithminecraft/   # shared logic
+│  ├─ fabric/java/com/learningwithminecraft/    # Fabric-only integration
+│  ├─ forge/java/com/learningwithminecraft/     # Forge-only integration
+│  └─ main/resources/
+│     ├─ assets/learningwithminecraft/lang/     # translation files
+│     ├─ config/                                # bundled config templates
+│     └─ dictionaries/                          # local dictionary assets and samples
+├─ docs/
+│  ├─ architecture/    # technical design notes
+│  ├─ formats/         # dictionary and file format specs
+│  └─ roadmap/         # feature planning
+├─ examples/           # sample files and usage examples
+├─ scripts/            # maintenance scripts
+└─ test-data/          # test dictionaries and fixtures
+```
+
+The project is being prepared as a multi-loader codebase, so the shared logic stays in one place and Fabric/Forge only handle platform-specific startup and UI hooks.
+
+The practical target is a shared core with separate loader integrations, not a single universal jar for every Minecraft release.
+
+## Summary
+
+`Learning with Minecraft` is a language-learning mod where the in-game chat becomes an educational tool. It corrects sentences, suggests alternatives, explains mistakes in the player's native language, and keeps a panel with learned words for future review, all powered by local dictionaries provided by the user.
